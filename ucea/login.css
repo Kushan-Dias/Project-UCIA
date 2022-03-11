@@ -10,7 +10,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:rgb(109, 3, 3);
+    background:url("images/IIT.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .container{
     position: relative;
@@ -108,7 +110,7 @@ body{
 }
 .form .button input{
     border: none;
-    background-color: aquamarine;
+    background-color: rgb(109, 3, 3);
     color: aliceblue;
     font-weight: 500;
     font-size: 17px;
