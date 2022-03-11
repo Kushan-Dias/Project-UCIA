@@ -29,14 +29,15 @@ body{
 .navbar .icon-bar{
     width: 120%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
     float: right;
     
 }
 .icon-bar a{
-    padding: 20px 50px;
-    font-size: 30px;
+    padding: 20px 40px;
+    padding-right: 5px;
+    font-size: 28px;
     justify-content: right;
     color: rgb(255, 255, 255);
 }
@@ -109,6 +110,16 @@ body{
 }
 
 /*input message part*/
+.emoji-btn{
+    background: transparent;
+    padding: 10px; 
+}
+.emoji-btn img{
+    width: 33px;
+    height: 33px;
+    opacity: 70%;
+    
+}
 .chat-input{
     display: flex;
     align-items: center;
@@ -132,6 +143,7 @@ body{
 .send-btn{
     width: 45px;
     height: 40px;
+    filter: grayscale(30%);
     background: transparent;
     overflow: hidden;
     position: relative;
@@ -155,7 +167,7 @@ body{
     cursor: pointer;
     overflow: hidden;
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     border-radius: 50%;
 }
 .chat-btn img{
