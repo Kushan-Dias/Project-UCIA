@@ -10,7 +10,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blue;
+    background-color:rgb(109, 3, 3);
 }
 .container{
     position: relative;
@@ -35,7 +35,7 @@ body{
     bottom: 0;
     height: 3px;
     width: 30px;
-    background-color: blue;
+    background-color:rgb(109, 3, 3);
     border-radius: 25px;
 }
 .form .input-field{
@@ -58,7 +58,7 @@ body{
     transition: all 0.2s ease;
 }
 .input-field input:is(:focus, :valid){
-    border-bottom-color:blue ;
+    border-bottom-color:rgb(109, 3, 3) ;
 }
 .input-field i{
     position: absolute;
@@ -68,7 +68,7 @@ body{
     font-size: 23px;
 }
 .input-field input:is(:focus, :valid) ~ i{
-    color:blue ;
+    color:rgb(109, 3, 3);
 }
 .input-field i.icon{
     left: 0;
@@ -98,7 +98,7 @@ body{
 }
 .form a.text{
     text-decoration: none;
-    color: blue;
+    color: rgb(109, 3, 3);
 }
 .form a:hover{
     text-decoration: underline;
