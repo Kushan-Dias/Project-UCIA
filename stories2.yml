@@ -1,0 +1,419 @@
+version: "3.0"
+
+stories:
+
+- story: happy path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: feeling
+  - action: utter_feel_response
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: abusive path
+  steps:
+  - intent: abusive
+  - action: utter_abusive
+  - action: utter_ goodbye
+
+- story: Ask for a joke
+  steps:
+  - intent: joke
+  - action: utter_joke
+  - intent: mood_great
+  - action: utter_happy
+
+- story: asking to tell a joke
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: give_joke
+  - action: utter_tell_joke
+
+
+- story: ask about the developer
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: ask_developer
+  - action: utter_tell_developer
+
+- story: ask date or time
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_datetime
+  - action: utter_show_datetime
+
+- story: collect university degree program info
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: available_programs
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_available_courses
+  - intent: course
+  - action: provide_course_info
+  
+
+- story: Ask About University
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: about_university
+  - action: utter_about_university
+ 
+
+- story: Ask About Admission
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: admission
+  - action: utter_provide_admission_info
+  
+- story: Ask About NTS
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: NTS
+  - action: utter_provide_NTS_info
+
+
+- story: Ask About NAT
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: NTS
+  - action: utter_provide_NAT_info
+
+
+- story: Ask About applying for courses
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: apply
+  - action: utter_provide_course
+  - action: utter_provide_apply_info
+
+- story: Ask About hostel 
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: hostel
+  - action: utter_provide_hostel_info 
+  
+  
+- story: evening_classes
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: evening_classes
+  - action: utter_evening_classes
+
+- story: full time
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: fulltime
+  - action: utter_fulltime
+  
+
+- story: part time
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: part_time
+  - action: utter_part_time
+
+  
+- story: Asking about Academic period
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: academic_period
+  - action: utter_academic_period
+
+- story: Asking about degree duration
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: degree_duration
+  - action: utter_degree_duration
+
+- story: Asking about medals and certificates
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: medals_certificates
+  - action: utter_medals_certificates
+
+- story: Asking about events
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: events
+  - action: utter_events
+
+
+- story: Asking about contact details
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: contact
+  - action: utter_contact
+
+- story: Asking about address
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: address
+  - action: utter_address
+
+- story: Asking about location
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: location
+  - action: utter_address
+
+- story: Asking about library
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: library
+  - action: utter_library
+
+- story: Asking about cafeteria
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: cafeteria
+  - action: utter_cafeteria
+
+- story: Asking about auditorium
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: auditorium
+  - action: utter_auditorium
+
+- story: Asking about registrar
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: registrar
+  - action: utter_registrar
+
+- story: Asking about module leader
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: moduleLeader
+  - action: utter_moduleLeader
+
+- story: Asking about level coordinator
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: levelCoordinator
+  - action: utter_levelCoordinator
+
+- story: Asking about course leader
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: course_leader
+  - action: utter_course_leader
+
+- story: Asking about head of the department
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: head_of_department
+  - action: utter_head_of_department
+
+- story: Asking about Dean
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: dean
+  - action: utter_dean
+
+- story: Asking about modules_course_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: module
+  - action: utter_module
+
+- story: Asking about modules_course_not_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: module
+  - action: utter_provide_course
+
+- story: Asking about administrative office
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: administrative_office
+  - action: utter_administrative_office
+
+- story: Asking about final year project
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: finalYearProject
+  - action: utter_finalYearProject
+
+- story: Asking about transferring to another University
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: transfer
+  - action: utter_transfer
+
+
+- story: Asking about classes
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: classes
+  - action: utter_classes
+
+
+- story: Asking about graduation
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: graduation
+  - action: utter_graduation
+
+- story: Asking about re-admission
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: readmission
+  - action: utter_readmission
+
+- story: Asking about semester
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: semester_week
+  - action: utter_semester_week
+
+- story: Asking about rechecking papers
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: rechecking_paper
+  - action: utter_rechecking_paper
+
+- story: Fees_course_not_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: fees
+  - action: utter_provide_course
+ 
+
+- story: Fees_course_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: fees
+  - slot_was_set:
+    - course: computer science
+  - action: utter_provide_fees
+  
+
+- story: asking_opening_hours
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: openingHours
+  - action: utter_provide_opening_hours
+
+- story: asking_registration_process
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: registration
+  - action: utter_provide_registration_details
+
+- story: asking_entry_requirements_course_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: requirements
+  - slot_was_set:
+    - course: computer science
+  - action: utter_provide_requirements
+
+- story: asking_entry_requirements_course_not_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: requirements
+  - action: utter_provide_course
+  
+- story: asking_about_placement_year
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: placement
+  - action: utter_placement_info
+
+- story: Asking_Study_abroad
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: abroad
+  - action: utter_provide_abroad_info
+  
+- story: Asking_about_scholarship
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: scholarship
+  - action: utter_provide_scholarship_info
+
+
+
+
+
+
+
+
