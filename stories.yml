@@ -516,7 +516,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: award_classification
-  - action: utter_provide_classification
+  - action: utter_provide_award_classification
 
 
 
