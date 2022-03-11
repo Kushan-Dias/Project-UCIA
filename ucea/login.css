@@ -40,7 +40,6 @@ body{
 }
 .form .input-field{
     margin-top: 30px;
-    background-color: red;
     position: relative;
     height: 50px;
     width: 100%;
@@ -76,4 +75,49 @@ body{
 }
 .input-field i.showHidePw{
     right: 50px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+.checkbox-content input{
+    accent-color: rgb(8, 4, 4);
+    margin:0 8px -2px 4px
+}
+.form .text{
+    color: #999;
+    font-size: 14px;
+}
+.form a.text{
+    text-decoration: none;
+    color: blue;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+.form .button{
+    margin-top: 35px;
+}
+.form .button input{
+    border: none;
+    background-color: aquamarine;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.button input:hover{
+    background-color: red;
+}
+.form .login-signup{
+    margin: 30px;
+    text-align: center;
 }
