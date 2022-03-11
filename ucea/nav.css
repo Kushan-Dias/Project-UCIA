@@ -37,7 +37,7 @@ body{
 .icon-bar a{
     padding: 20px 50px;
     font-size: 30px;
-    justify-content: center;
+    justify-content: right;
     color: rgb(255, 255, 255);
 }
 
