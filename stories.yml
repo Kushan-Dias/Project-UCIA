@@ -459,3 +459,66 @@ stories:
   - intent: scholarship
   - action: utter_provide_scholarship_info
 
+
+#new stories
+
+- story: Asking about referral
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: referral
+  - action: utter_provide_referral
+
+- story: Asking about deferral
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deferral
+  - action: utter_provide_deferral
+
+- story: Asking about module retaking 
+  steps: 
+  - intent: greet
+  - action: utter_greet 
+  - intent: retake
+  - action: utter_provide_retake
+
+- story: Asking about failing a module
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fail
+  - action: utter_fail
+
+- story: Asking about Marking
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: marking
+  - action: utter_making
+  
+- story: Asking about credit value requirements for award
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: credit_for_award
+  - action: utter_provide_credit_for_award
+
+- story: Asking about honours degree scheme
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: degree_scheme
+  - action: utter_provide_degree_scheme
+
+- story: Asking about award classification scheme 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: award_classification
+  - action: utter_provide_classification
+
+
+
+
+
