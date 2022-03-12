@@ -58,12 +58,12 @@ stories:
   - intent: mood_great
   - action: utter_happy
 
-- story: asking to tell a joke
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: give_joke
-  - action: utter_tell_joke
+#- story: asking to tell a joke
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: give_joke
+#  - action: utter_tell_joke
 
 - story: ask about the developer
   steps:
@@ -72,12 +72,12 @@ stories:
   - intent: ask_developer
   - action: utter_tell_developer
 
-- story: telling ask anything
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_anything
-  - action: utter_general_question
+#- story: telling ask anything
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: ask_anything
+#  - action: utter_general_question
 
 - story: ask date or time
   steps:
@@ -157,20 +157,20 @@ stories:
   - intent: admission
   - action: utter_provide_admission_info
   
-- story: Ask About NTS
+- story: Ask About GPA
   steps:
   - intent: greet 
   - action: utter_greet
-  - intent: NTS
-  - action: utter_provide_NTS_info
+  - intent: GPA
+  - action: utter_provide_GPA_info
 
 
-- story: Ask About NAT
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: NTS
-  - action: utter_provide_NAT_info
+#- story: Ask About NAT
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: NTS
+#  - action: utter_provide_NAT_info
 
 
 - story: Ask About applying for courses
@@ -241,19 +241,19 @@ stories:
   - action: utter_events
 
 
-- story: Asking about address
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: address
-  - action: utter_address
+#- story: Asking about address
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: address
+#  - action: utter_address
 
-- story: Asking about location
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: location
-  - action: utter_address
+#- story: Asking about location
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: location
+#  - action: utter_address
 
 - story: Asking about library
   steps:
@@ -331,6 +331,7 @@ stories:
   - action: utter_greet
   - intent: module
   - action: utter_provide_course
+  - action: utter_module
 
 - story: Asking about administrative office
   steps:
@@ -459,7 +460,6 @@ stories:
   - intent: scholarship
   - action: utter_provide_scholarship_info
 
-
 #new stories
 
 - story: Asking about referral
@@ -488,6 +488,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: fail
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_fail
 
 - story: Asking about Marking
@@ -495,6 +497,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: marking
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_making
   
 - story: Asking about credit value requirements for award
@@ -502,6 +506,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: credit_for_award
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_provide_credit_for_award
 
 - story: Asking about honours degree scheme
@@ -509,6 +515,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: degree_scheme
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_provide_degree_scheme
 
 - story: Asking about award classification scheme 
@@ -516,9 +524,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: award_classification
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_provide_award_classification
-
-
-
 
 
