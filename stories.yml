@@ -1,0 +1,711 @@
+version: "3.0"
+
+stories:
+
+- story: happy path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: feeling
+  - action: utter_feel_response
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Asking about contact details 1
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: contact
+  - action: contact_detail_form
+  - active_loop: contact_detail_form
+  - slot_was_set:
+    - requested_slot: contact_detail
+  - slot_was_set:
+    - contact_detail: telephone number
+  - slot_was_set:
+    - contact_detail: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_contact_slots
+
+
+- story: abusive path
+  steps:
+  - intent: abusive
+  - action: utter_abusive
+  - action: utter_goodbye
+
+- story: Ask for a joke
+  steps:
+  - intent: joke
+  - action: utter_joke
+  - intent: mood_great
+  - action: utter_happy
+
+#- story: asking to tell a joke
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: give_joke
+#  - action: utter_tell_joke
+
+- story: ask about the developer
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: ask_developer
+  - action: utter_tell_developer
+
+#- story: telling ask anything
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: ask_anything
+#  - action: utter_general_question
+
+
+- story: ask date or time 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_datetime
+  - action: action_date_time  #put buttons for date and time
+
+- story: date path
+  steps:
+  - intent: tell_date
+    entities:
+      - date_time: "date"
+  - slot_was_set:
+      - date_time: "date"
+  - action: action_showtime
+  
+  
+- story: time path
+  steps:
+  - intent: tell_time
+    entities:
+      - date_time: "time"
+  - slot_was_set:
+      - date_time: "time"
+  - action: action_showtime
+
+
+- story: asking out of scope 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_outOfScope
+  - action: utter_outOfScope
+
+
+- story: ask for help
+  steps:
+  - intent: help
+  - action: utter_listen_query
+
+- story: collect university degree program info
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: available_programs
+  - action: simple_degree_program_form
+  - active_loop: simple_degree_program_form
+  - slot_was_set:
+    - requested_slot: level_of_study
+  - slot_was_set:
+    - level_of_study: undergraduate
+  - slot_was_set:
+    - level_of_study: undergraduate
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: computerr science
+  - slot_was_set:
+    - course_name: null
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: comput science
+  - slot_was_set:
+    - course_name: null
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: computer science
+  - slot_was_set:
+    - course_name: computer science
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_degree_slots
+  - intent: thankyou
+  - action: utter_welcome
+
+
+- story: collect university degree program info (user interrupts - 1) #new 
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: available_programs
+  - action: utter_levels_of_study
+  - intent: stop
+  - action: utter_ask_continue
+  - or: 
+    - intent: stop
+    - intent: affirm
+  - action: utter_goodbye
+
+
+- story: collect university degree program info (user interrupts - 2) #new 
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: available_programs
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_available_courses
+  - intent: stop
+  - action: utter_ask_continue
+  - or: 
+    - intent: stop
+    - intent: affirm
+  - action: utter_goodbye
+  
+
+- story: Ask About University
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: about_university
+  - action: utter_about_university
+ 
+
+- story: Ask About Admission
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: admission
+  - action: utter_provide_admission_info
+  
+- story: Ask About GPA
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: GPA
+  - action: utter_provide_GPA_info
+
+
+#- story: Ask About NAT
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: NTS
+#  - action: utter_provide_NAT_info
+
+
+- story: Ask About applying for courses
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: apply
+  - action: utter_provide_course
+  - action: utter_provide_apply_info
+
+- story: Ask About hostel 
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: hostel
+  - action: utter_provide_hostel_info 
+  
+  
+- story: evening_classes
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: evening_classes
+  - action: evening_class_form
+  - active_loop: evening_class_form
+  - slot_was_set:
+    - requested_slot: level
+  - slot_was_set:
+    - level: l5
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: computer science
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: A
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_evening_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: full time
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: fulltime
+  - action: utter_fulltime
+  
+
+- story: part time
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: part_time
+  - action: utter_part_time
+
+  
+#- story: Asking about Academic period
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: academic_period
+#  - action: utter_academic_period
+
+- story: Asking about degree duration
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: degree_duration
+  - action: utter_degree_duration
+
+- story: Asking about medals and certificates
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: medals_certificates
+  - action: utter_medals_certificates
+
+- story: Asking about events
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: events
+  - action: action_events #put buttons
+
+- story: academic events path
+  steps:
+  - intent: tell_academic
+    entities:
+      - event_type: "Academic"
+  - slot_was_set:
+      - event_type: "Academic"
+  - action: action_eventInfo
+
+- story: other events path
+  steps:
+  - intent: tell_other
+    entities:
+      - event_type: "other"
+  - slot_was_set:
+      - event_type: "other"
+  - action: action_eventInfo
+
+#- story: Asking about address
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: address
+#  - action: utter_address
+
+#- story: Asking about location
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: location
+#  - action: utter_address
+
+- story: Asking about library
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: library
+  - action: utter_library
+
+- story: Asking about cafeteria
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: cafeteria
+  - action: utter_cafeteria
+
+- story: Asking about auditorium
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: auditorium
+  - action: utter_auditorium
+
+- story: Asking about registrar
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: registrar
+  - action: contact_registrar_form
+  - active_loop: contact_registrar_form
+  - slot_was_set:
+    - requested_slot: contact_registrar
+  - slot_was_set:
+    - contact_registrar: telephone number
+  - slot_was_set:
+    - contact_registrar: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_registrar_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Asking about module leader
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: moduleLeader
+  - action: contact_moduleLeader_form
+  - active_loop: contact_moduleLeader_form
+  - slot_was_set:
+    - requested_slot: contact_moduleLeader
+  - slot_was_set:
+    - contact_moduleLeader: telephone number
+  - slot_was_set:
+    - contact_moduleLeader: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_moduleLeader_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Asking about level coordinator
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: levelCoordinator
+  - action: contact_levelCoordinator_form
+  - active_loop: contact_levelCoordinator_form
+  - slot_was_set:
+    - requested_slot: contact_levelCoordinator
+  - slot_was_set:
+    - contact_levelCoordinator: telephone number
+  - slot_was_set:
+    - contact_levelCoordinator: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_levelCoordinator_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Asking about course leader
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: course_leader
+  - action: contact_course_leader_form
+  - active_loop: contact_course_leader_form
+  - slot_was_set:
+    - requested_slot: contact_course_leader
+  - slot_was_set:
+    - contact_course_leader: telephone number
+  - slot_was_set:
+    - contact_course_leader: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_course_leader_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Asking about head of the department
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: head_of_department
+  - action: contact_head_of_department_form
+  - active_loop: contact_head_of_department_form
+  - slot_was_set:
+    - requested_slot: contact_head_of_department
+  - slot_was_set:
+    - contact_head_of_department: telephone number
+  - slot_was_set:
+    - contact_head_of_department: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_head_of_department_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Asking about Dean
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: dean
+  - action: contact_dean_form
+  - active_loop: contact_dean_form
+  - slot_was_set:
+    - requested_slot: contact_dean
+  - slot_was_set:
+    - contact_dean: telephone number
+  - slot_was_set:
+    - contact_dean: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_dean_slots
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Asking about modules_course_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: module
+  - action: utter_module
+
+- story: Asking about modules_course_not_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: module
+  - action: utter_provide_course
+  - action: utter_module
+
+- story: Asking about administrative office
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: administrative_office
+  - action: utter_administrative_office
+
+- story: Asking about final year project
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: finalYearProject
+  - action: utter_finalYearProject
+
+- story: Asking about transferring to another University
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: transfer
+  - action: utter_transfer
+
+
+- story: Asking about classes
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: classes
+  - action: utter_classes
+
+
+- story: Asking about graduation
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: graduation
+  - action: utter_graduation
+
+- story: Asking about re-admission
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: readmission
+  - action: utter_readmission
+
+- story: Asking about semester
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: semester_week
+  - action: utter_semester_week
+
+- story: Asking about rechecking papers
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: rechecking_paper
+  - action: utter_rechecking_paper
+
+- story: Fees_course_not_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: fees
+  - action: utter_provide_course
+ 
+
+- story: Fees_course_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: fees
+  - slot_was_set:
+    - course: computer science
+  - action: utter_provide_fees
+  
+
+- story: asking_opening_hours
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: openingHours
+  - action: utter_provide_opening_hours
+
+- story: asking_registration_process
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: registration
+  - action: utter_provide_registration_details
+
+- story: asking_entry_requirements_course_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: requirements
+  - slot_was_set:
+    - course: computer science
+  - action: utter_provide_requirements
+
+- story: asking_entry_requirements_course_not_provided
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: requirements
+  - action: utter_provide_course
+  
+- story: asking_about_placement_year
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: placement
+  - action: utter_placement_info
+
+- story: Asking_Study_abroad
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: abroad
+  - action: utter_provide_abroad_info
+  
+- story: Asking_about_scholarship
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: scholarship
+  - action: utter_provide_scholarship_info
+
+#new stories
+
+- story: Asking about referral
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: referral
+  - action: utter_provide_referral
+
+- story: Asking about deferral
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deferral
+  - action: utter_provide_deferral
+
+- story: Asking about module retaking 
+  steps: 
+  - intent: greet
+  - action: utter_greet 
+  - intent: retake
+  - action: utter_provide_retake
+
+- story: Asking about failing a module
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fail
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_fail
+
+- story: Asking about Marking
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: marking
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_making
+  
+- story: Asking about credit value requirements for award
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: credit_for_award
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_provide_credit_for_award
+
+- story: Asking about honours degree scheme
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: degree_scheme
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_provide_degree_scheme
+
+- story: Asking about award classification scheme 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: award_classification
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_provide_award_classification
