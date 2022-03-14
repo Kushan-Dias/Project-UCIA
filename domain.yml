@@ -31,6 +31,9 @@ responses:
     image: "https://i.imgur.com/nGF1K8f.jpg"
   - text: "Great, carry on!"  
 
+  utter_cheer_up:
+  - text: ""
+
   utter_did_that_help: 
   - text: "How can I help you?"
   - text: "Did that help you?"
@@ -42,6 +45,15 @@ responses:
 
   utter_iamabot:
   - text: "I am UCIA, powered by Los Cinco Imparables ."
+
+  utter_feel_response:
+  - text: ""
+
+  utter_submit:
+  - text: ""
+
+  utter_contact_slots:
+  - text: ""
 
 session_config:
   session_expiration_time: 60
