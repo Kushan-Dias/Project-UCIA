@@ -22,8 +22,14 @@ body{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+.container .forms{
+    width: 200%;
+    align-items: center;
+    height: 440px;
+}
 .container .form{
     padding: 30px;
+    width: 50%;
 }
 .container .form .title{
     position: relative;
