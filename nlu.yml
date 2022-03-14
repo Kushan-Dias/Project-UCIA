@@ -190,7 +190,7 @@ nlu:
     - Tell me more about the university
     - 
 
-- intent: feeling
+/*- intent: feeling
   examples: |
     - How are you feeling today UCIA?
     - What about you?
@@ -213,7 +213,7 @@ nlu:
     - How are you feeling today UCIA?
     - What about you?
     - How are you feeling?
-    - Are you feeling great today?
+    - Are you feeling great today?*/
 
 
 
