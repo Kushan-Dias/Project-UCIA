@@ -120,13 +120,6 @@ nlu:
     - Hey make me a joke
     - I want to laugh UCIA
 
-- intent: give_joke
-  examples: |
-    - What did the shark say after eating a clownfish?It tastes a little funny
-    - Why dont eggs tell jokes?Because they crack eachother up!
-    - Why do bees have sticky hair?because they use homeycombs!
-    - What do you call a pig that does karate?Pork chop
-
 - intent: ask_developer
   examples: |
     - who designed you?
@@ -151,12 +144,6 @@ nlu:
     - Please provide me with the date and time today
     - UCIA, tell me the date please
 
-- intent: feeling
-  examples: |
-    - How are you feeling today UCIA?
-    - What about you?
-    - How are you feeling?
-    - Are you feeling great today?
 
 - intent: available_programs
   examples: |
@@ -188,32 +175,77 @@ nlu:
     - Can you tell me about the university please?
     - Can you tell me more about IIT?
     - Tell me more about the university
-    - 
+    - Tell me some details about IIT
 
-- intent: feeling
+- intent: admission
   examples: |
-    - How are you feeling today UCIA?
-    - What about you?
-    - How are you feeling?
-    - Are you feeling great today?
-- intent: feeling
+    - How does the admission process take place?
+    - What can you tell me about admission?
+    - What are the steps for admission?
+    - What is the way to get admission?
+    - What is the way i can get admission?
+    
+- intent: GPA
   examples: |
-    - How are you feeling today UCIA?
-    - What about you?
-    - How are you feeling?
-    - Are you feeling great today?
-- intent: feeling
+    - UCIA what is the GPA?
+    - What is he GPA?
+    - What is GPA?
+
+- intent: apply
   examples: |
-    - How are you feeling today UCIA?
-    - What about you?
-    - How are you feeling?
-    - Are you feeling great today?
-- intent: feeling
+    - How can i apply for the program?
+
+- intent: contact
   examples: |
-    - How are you feeling today UCIA?
-    - What about you?
-    - How are you feeling?
-    - Are you feeling great today?
+    - Hey UCIA can you please send me contact details please?
+    - Can you i have the contact details of IIT?
+    - I want to contact IIT
+    - Can i have the contact number of IIT?
+    - Send me the contac details of IIT
+    - What is the number of IIT?
+    - What is the phone number of IIT?
+
+- intent: tell_date
+  examples: |
+    - How can i apply for the program?
+
+- intent: tell_time
+  examples: |
+    - Hey UCIA can you tell me the time please?
+    - Can you tell me the time?
+    - Can you provide me the time please?
+    - What is the time?
+    - Can you tell me the present time?
+    - Time please?
+    - Tell me the time?
+
+- intent: help
+  examples: |
+    - Can you please help me?
+    - UCIA can you help me?
+    - Please help me
+    - I need help please
+    - All i need is help
+    - Help me
+    - Help me please
+
+- intent: thankyou
+  examples: |
+    - Thank you!
+    - Thank you so much!
+    - Thank you UCIA
+    - Thank you , it was helpful
+    - Alright thanks
+    - Thanks
+    - Thanx
+
+
+
+
+
+
+
+
 
 
 
