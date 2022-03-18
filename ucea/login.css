@@ -10,26 +10,44 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background:url("images/IIT.jpg");
+    
     background-size: cover;
     background-repeat: no-repeat;
 }
 .container{
     position: relative;
-    max-width: 430px;
+    max-width: 450px;
     width: 100%;
     background: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    overflow:  hidden;
 }
 .container .forms{
     width: 200%;
     align-items: center;
-    height: 440px;
+    height: 500px;
+    transition: height 0.2 ease;
 }
+
 .container .form{
     padding: 30px;
     width: 50%;
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+}
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease,opacity 0.15s ease;
+}
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
 }
 .container .form .title{
     position: relative;
@@ -130,4 +148,5 @@ body{
 .form .login-signup{
     margin: 30px;
     text-align: center;
+    height: 600px;
 }
