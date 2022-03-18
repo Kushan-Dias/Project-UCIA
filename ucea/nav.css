@@ -110,16 +110,7 @@ body{
 }
 
 /*input message part*/
-.emoji-btn{
-    background: transparent;
-    padding: 10px; 
-}
-.emoji-btn img{
-    width: 33px;
-    height: 33px;
-    opacity: 70%;
-    
-}
+
 .chat-input{
     display: flex;
     align-items: center;
