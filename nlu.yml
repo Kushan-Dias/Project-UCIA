@@ -415,6 +415,64 @@ nlu:
     - How to transfer from IIT to another university?
     - UCIA how to transfer to another university?
 
+- intent: classes
+  examples: |
+    - UCIA can i know about the classes?
+    - Tell me about the classes ?
+    - What are the classes available?
+    - Can you tell me about the classes?
+
+- intent: graduation
+  examples: |
+    - UCIA can you tell me about graduation?
+    - Tell me about graduation
+    - UCIA what about graduation
+
+- intent: readmission
+  examples: |
+    - UCIA can you tell me about readmission?
+    - How to get into readmission?
+    - Tell me about readmission
+
+- intent: semester_week
+  examples: |
+    - UCIA can you tell me about the semester please?
+    - Tell me about the semester
+    - Can i know about the semester?
+
+- intent: rechecking_paper
+  examples: |
+    - UCIA can you tell me about rechecking papers please?
+    - How to recheck papers?
+    - I want to recheck my Paper
+
+- intent: fees
+  examples: |
+    - UCIA can you tell me about the fees for courses which are not provided?
+
+
+- intent: feesP
+  examples: |
+    - UCIA can you tell me about the fees for courses which are not provided?
+
+- intent: transfer
+  examples: |
+    - UCIA can i transfer to another university?
+    - How to transfer from IIT to another university?
+    - UCIA how to transfer to another university?
+
+- intent: transfer
+  examples: |
+    - UCIA can i transfer to another university?
+    - How to transfer from IIT to another university?
+    - UCIA how to transfer to another university?
+
+- intent: transfer
+  examples: |
+    - UCIA can i transfer to another university?
+    - How to transfer from IIT to another university?
+    - UCIA how to transfer to another university?
+
 
 
 
