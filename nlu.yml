@@ -179,11 +179,7 @@ nlu:
     - Tell me more about the university
     - Tell me some details about IIT
 
-<<<<<<< HEAD
 - intent: admission
-=======
-/*- intent: feeling
->>>>>>> d65679e2467b0ea87ffa13d507db680814af332d
   examples: |
     - How does the admission process take place?
     - What can you tell me about admission?
@@ -205,7 +201,6 @@ nlu:
 
 - intent: contact
   examples: |
-<<<<<<< HEAD
     - Hey UCIA can you please send me contact details please?
     - Can you i have the contact details of IIT?
     - I want to contact IIT
@@ -455,76 +450,87 @@ nlu:
   examples: |
     - UCIA can you tell me about the fees for courses which are not provided?
 
-
 - intent: feesP
   examples: |
     - UCIA can you tell me about the fees for courses which are not provided?
 
-- intent: transfer
+- intent: openingHours
+  examples: |
+    - UCIA what time does IIT open?
+    - What is the opening our of IIT?
+    - Can you tell me what time IIT opens
+
+- intent: registration
   examples: |
     - UCIA can i transfer to another university?
     - How to transfer from IIT to another university?
     - UCIA how to transfer to another university?
 
-- intent: transfer
+- intent: requirements
   examples: |
-    - UCIA can i transfer to another university?
-    - How to transfer from IIT to another university?
-    - UCIA how to transfer to another university?
+    - UCIA tell me what i need to enter the program
+    - What requirements do i need to enter IIT
 
-- intent: transfer
+- intent: placement
   examples: |
-    - UCIA can i transfer to another university?
-    - How to transfer from IIT to another university?
-    - UCIA how to transfer to another university?
+    - UCIA tell me about the placement year
+    - can you tell me about the placement year?
+    - Tell me about the placement please?
+
+- intent: abroad
+  examples: |
+    - UCIA can i study abroad?
+    - Tell me how to study abroad please
+    - Is there a way to study abroad?
+
+- intent: scholarship
+  examples: |
+    - UCIA tell me about scholarships please
+    - How do i get a scholarship
+    - Tell me how i get a scholarship please
+
+- intent: referral
+  examples: |
+    - UCIA can i know about refer?
+    - Tell me about refer please
+
+- intent: deferral
+  examples: |
+    - UCIA can i know about defer?
+    - Tell me about defer please
 
 
+- intent: retake
+  examples: |
+    - UCIA can i know about the retake?
+    - What is retake?
+    - UCIA why do we need to retake and exam?
 
+- intent: fail
+  examples: |
+    - UCIA what can i do if i fail a module?
+    - What can you tell me about failing a module?
+    - What to do when you fail a module?
 
+- intent: marking
+  examples: |
+    - UCIA can you tell me about the marking scheme?
+    - Tell me about the marking scheme?
+    - What can you tell me about the marking scheme?
+    - Tell me how you mark please
 
+- intent: credit_for_award
+  examples: |
+    - UCIA can i know about the requirements for a credit award?
+    - Tell me about the requirements for the credit award?
 
+- intent: degree_scheme
+  examples: |
+    - UCIA can you tell me about the honors?
+    - What is honors?
+    - Tell me about honors please
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-    - How are you feeling today UCIA?
-    - What about you?
-    - How are you feeling?
-    - Are you feeling great today?*/
->>>>>>> d65679e2467b0ea87ffa13d507db680814af332d
-
-
-
-  
-    
-    
+- intent: award_classification
+  examples: |
+    - UCIA can you tell me about the award classificaton?
+    - Tell me about the awards please
