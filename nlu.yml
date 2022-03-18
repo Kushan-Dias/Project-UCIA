@@ -179,7 +179,11 @@ nlu:
     - Tell me more about the university
     - Tell me some details about IIT
 
+<<<<<<< HEAD
 - intent: admission
+=======
+/*- intent: feeling
+>>>>>>> d65679e2467b0ea87ffa13d507db680814af332d
   examples: |
     - How does the admission process take place?
     - What can you tell me about admission?
@@ -201,6 +205,7 @@ nlu:
 
 - intent: contact
   examples: |
+<<<<<<< HEAD
     - Hey UCIA can you please send me contact details please?
     - Can you i have the contact details of IIT?
     - I want to contact IIT
@@ -511,6 +516,12 @@ nlu:
 
 
 
+=======
+    - How are you feeling today UCIA?
+    - What about you?
+    - How are you feeling?
+    - Are you feeling great today?*/
+>>>>>>> d65679e2467b0ea87ffa13d507db680814af332d
 
 
 
