@@ -38,12 +38,25 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: Asking about contact details 
+- story: Asking about contact details 1
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: contact
-  - action: utter_contact
+  - action: contact_detail_form
+  - active_loop: contact_detail_form
+  - slot_was_set:
+    - requested_slot: contact_detail
+  - slot_was_set:
+    - contact_detail: telephone number
+  - slot_was_set:
+    - contact_detail: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_contact_slots
+
 
 - story: abusive path
   steps:
@@ -58,12 +71,12 @@ stories:
   - intent: mood_great
   - action: utter_happy
 
-- story: asking to tell a joke
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: give_joke
-  - action: utter_tell_joke
+#- story: asking to tell a joke
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: give_joke
+#  - action: utter_tell_joke
 
 - story: ask about the developer
   steps:
@@ -72,19 +85,39 @@ stories:
   - intent: ask_developer
   - action: utter_tell_developer
 
-- story: telling ask anything
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_anything
-  - action: utter_general_question
+#- story: telling ask anything
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: ask_anything
+#  - action: utter_general_question
 
-- story: ask date or time
+
+- story: ask date or time 
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_datetime
-  - action: utter_show_datetime
+  - action: action_date_time  #put buttons for date and time
+
+- story: date path
+  steps:
+  - intent: tell_date
+    entities:
+      - date_time: "date"
+  - slot_was_set:
+      - date_time: "date"
+  - action: action_showtime
+  
+  
+- story: time path
+  steps:
+  - intent: tell_time
+    entities:
+      - date_time: "time"
+  - slot_was_set:
+      - date_time: "time"
+  - action: action_showtime
 
 
 - story: asking out of scope 
@@ -100,17 +133,45 @@ stories:
   - intent: help
   - action: utter_listen_query
 
-
 - story: collect university degree program info
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: available_programs
-  - action: utter_levels_of_study
-  - intent: levels_of_study
-  - action: utter_available_courses
-  - intent: course
-  - action: provide_course_info
+  - action: simple_degree_program_form
+  - active_loop: simple_degree_program_form
+  - slot_was_set:
+    - requested_slot: level_of_study
+  - slot_was_set:
+    - level_of_study: undergraduate
+  - slot_was_set:
+    - level_of_study: undergraduate
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: computerr science
+  - slot_was_set:
+    - course_name: null
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: comput science
+  - slot_was_set:
+    - course_name: null
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: computer science
+  - slot_was_set:
+    - course_name: computer science
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_degree_slots
+  - intent: thankyou
+  - action: utter_welcome
+
 
 - story: collect university degree program info (user interrupts - 1) #new 
   steps:
@@ -157,20 +218,20 @@ stories:
   - intent: admission
   - action: utter_provide_admission_info
   
-- story: Ask About NTS
+- story: Ask About GPA
   steps:
   - intent: greet 
   - action: utter_greet
-  - intent: NTS
-  - action: utter_provide_NTS_info
+  - intent: GPA
+  - action: utter_provide_GPA_info
 
 
-- story: Ask About NAT
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: NTS
-  - action: utter_provide_NAT_info
+#- story: Ask About NAT
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: NTS
+#  - action: utter_provide_NAT_info
 
 
 - story: Ask About applying for courses
@@ -194,7 +255,27 @@ stories:
   - intent: greet 
   - action: utter_greet
   - intent: evening_classes
-  - action: utter_evening_classes
+  - action: evening_class_form
+  - active_loop: evening_class_form
+  - slot_was_set:
+    - requested_slot: level
+  - slot_was_set:
+    - level: l5
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: computer science
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: A
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_evening_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: full time
   steps:
@@ -212,12 +293,12 @@ stories:
   - action: utter_part_time
 
   
-- story: Asking about Academic period
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: academic_period
-  - action: utter_academic_period
+#- story: Asking about Academic period
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: academic_period
+#  - action: utter_academic_period
 
 - story: Asking about degree duration
   steps:
@@ -238,22 +319,39 @@ stories:
   - intent: greet 
   - action: utter_greet
   - intent: events
-  - action: utter_events
+  - action: action_events #put buttons
 
-
-- story: Asking about address
+- story: academic events path
   steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: address
-  - action: utter_address
+  - intent: tell_academic
+    entities:
+      - event_type: "Academic"
+  - slot_was_set:
+      - event_type: "Academic"
+  - action: action_eventInfo
 
-- story: Asking about location
+- story: other events path
   steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: location
-  - action: utter_address
+  - intent: tell_other
+    entities:
+      - event_type: "other"
+  - slot_was_set:
+      - event_type: "other"
+  - action: action_eventInfo
+
+#- story: Asking about address
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: address
+#  - action: utter_address
+
+#- story: Asking about location
+#  steps:
+#  - intent: greet 
+#  - action: utter_greet
+#  - intent: location
+#  - action: utter_address
 
 - story: Asking about library
   steps:
@@ -281,42 +379,126 @@ stories:
   - intent: greet 
   - action: utter_greet
   - intent: registrar
-  - action: utter_registrar
+  - action: contact_registrar_form
+  - active_loop: contact_registrar_form
+  - slot_was_set:
+    - requested_slot: contact_registrar
+  - slot_was_set:
+    - contact_registrar: telephone number
+  - slot_was_set:
+    - contact_registrar: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_registrar_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: Asking about module leader
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: moduleLeader
-  - action: utter_moduleLeader
+  - action: contact_moduleLeader_form
+  - active_loop: contact_moduleLeader_form
+  - slot_was_set:
+    - requested_slot: contact_moduleLeader
+  - slot_was_set:
+    - contact_moduleLeader: telephone number
+  - slot_was_set:
+    - contact_moduleLeader: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_moduleLeader_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: Asking about level coordinator
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: levelCoordinator
-  - action: utter_levelCoordinator
+  - action: contact_levelCoordinator_form
+  - active_loop: contact_levelCoordinator_form
+  - slot_was_set:
+    - requested_slot: contact_levelCoordinator
+  - slot_was_set:
+    - contact_levelCoordinator: telephone number
+  - slot_was_set:
+    - contact_levelCoordinator: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_levelCoordinator_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: Asking about course leader
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: course_leader
-  - action: utter_course_leader
+  - action: contact_course_leader_form
+  - active_loop: contact_course_leader_form
+  - slot_was_set:
+    - requested_slot: contact_course_leader
+  - slot_was_set:
+    - contact_course_leader: telephone number
+  - slot_was_set:
+    - contact_course_leader: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_course_leader_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: Asking about head of the department
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: head_of_department
-  - action: utter_head_of_department
+  - action: contact_head_of_department_form
+  - active_loop: contact_head_of_department_form
+  - slot_was_set:
+    - requested_slot: contact_head_of_department
+  - slot_was_set:
+    - contact_head_of_department: telephone number
+  - slot_was_set:
+    - contact_head_of_department: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_head_of_department_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: Asking about Dean
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: dean
-  - action: utter_dean
+  - action: contact_dean_form
+  - active_loop: contact_dean_form
+  - slot_was_set:
+    - requested_slot: contact_dean
+  - slot_was_set:
+    - contact_dean: telephone number
+  - slot_was_set:
+    - contact_dean: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_dean_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
 - story: Asking about modules_course_provided
   steps:
@@ -331,6 +513,7 @@ stories:
   - action: utter_greet
   - intent: module
   - action: utter_provide_course
+  - action: utter_module
 
 - story: Asking about administrative office
   steps:
@@ -459,7 +642,6 @@ stories:
   - intent: scholarship
   - action: utter_provide_scholarship_info
 
-
 #new stories
 
 - story: Asking about referral
@@ -488,6 +670,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: fail
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_fail
 
 - story: Asking about Marking
@@ -495,6 +679,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: marking
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_making
   
 - story: Asking about credit value requirements for award
@@ -502,6 +688,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: credit_for_award
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_provide_credit_for_award
 
 - story: Asking about honours degree scheme
@@ -509,6 +697,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: degree_scheme
+  - action: utter_levels_of_study
+  - intent: levels_of_study
   - action: utter_provide_degree_scheme
 
 - story: Asking about award classification scheme 
@@ -516,9 +706,6 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: award_classification
-  - action: utter_provide_classification
-
-
-
-
-
+  - action: utter_levels_of_study
+  - intent: levels_of_study
+  - action: utter_provide_award_classification
