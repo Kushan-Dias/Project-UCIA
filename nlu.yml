@@ -29,6 +29,8 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - See ya later UCIA
+    - Goodbye UCIA
 
 - intent: affirm
   examples: |
@@ -194,6 +196,8 @@ nlu:
 - intent: apply
   examples: |
     - How can i apply for the program?
+    - UCIA tell me how to apply for the program?
+    - Tell me how to apply for the program
 
 - intent: contact
   examples: |
@@ -238,6 +242,209 @@ nlu:
     - Alright thanks
     - Thanks
     - Thanx
+
+- intent: stop
+  examples: |
+    - I see
+    - Oh i see
+    - Oh well i understand
+    - This is alright thank you
+    - Is that all?
+    - Perfect
+    - Amazing
+    - Just what i have been looking for
+    - This is all i want
+    - This is all i ever wanted
+
+- intent: admission
+  examples: |
+    - How can i gain admission?
+    - How to get admission?
+    - Can you tell me how to get admission?
+    - Tell me how to get admission?
+    - How can i get admission UCIA?
+    - Can you tell me the steps to get admission?
+
+- intent: hostel
+  examples: |
+    - Tell me about the hostel of IIT please
+    - UCIA tell me about the hostels
+    - UCIA what about hostels?
+
+- intent: hostel
+  examples: |
+    - Tell me about the hostel of IIT please
+    - UCIA tell me about the hostels
+    - UCIA what about hostels?
+
+- intent: evening_classes
+  examples: |
+    - Tell me about the evening classes
+    - UCIA what about evening classes?
+    - Hey UCIA tell me about evening classes
+
+- intent: fulltime
+  examples: |
+    - Tell me about the full time students
+    - UCIA tell me about full time courses
+
+- intent: part_time
+  examples: |
+    - Tell me about the part time students
+    - UCIA tell me about part time courses
+
+- intent: degree_duration
+  examples: |
+    - What about the degree duration?
+    - Hey UCIA tell me how long is the degree?
+    - Tell me how long the degree is
+    - Hey UCIA what is the degree duration?
+
+- intent: medals_certificates
+  examples: |
+    - Tell me about the medals and certificates please
+    - Hey UCIA tell me about the medals and certificates
+    - Tell me about the medals
+    - Tell me about the certificates
+    - UCIA what about medals and certificates
+
+- intent: events
+  examples: |
+    - Tell me about the events happening in IIT
+    - Hey UCIA tell me about the events at IIT
+    - What are the events in IIT
+    - Can you tell me about the vents in IIT
+
+  - intent: tell_academic
+  examples: |
+    - Tell me about the academic events happening at IIT
+    - What are the academic events happenig at IIT
+    - Can you tell me about the academic events happening at IIT?
+    - UCIA tell me about the academic events happening at IIT
+
+- intent: tell_other
+  examples: |
+    - Tell me about the events other than academic and social
+    - Hey UCIA what are the other event parts?
+    - Tell me about the other event parts
+
+- intent: library
+  examples: |
+    - Tell me about the library facilities at IIT
+    - UCIA tell me about the library facilites please
+    - Are there library facilities at IIT
+    - Please tell me about the library facilities 
+
+- intent: cafeteria
+  examples: |
+    - UCIA hows the food at IIT?
+    - Is the food in the cafeteria good?
+    - Tell me about the cafeteria in IIT
+    - Is there good cafeteria services in IIT?
+
+- intent: auditorium
+  examples: |
+    - UCIA hows the auditorium in IIT?
+    - Can you tell me about the auditorium in IIT?
+    - UCIA Tell me about the auditorium in IIT
+
+- intent: registrar
+  examples: |
+    - UCIA can you tell me about the registrar in IIT?
+    - Provide me the details of the registrar please
+    - UCIA Provide me the details of the registrar please
+
+- intent: moduleLeader
+  examples: |
+    - UCIA who is the module leader?
+    - Can you provide me the details of the moduel leader please?
+    - UCIA send me the module leaders number please
+
+- intent: levelCoordinator
+  examples: |
+    - UCIA who is the level coordinator?
+    - Can you provide me the details of the level coordinator please?
+    - UCIA send me the level coordinators number please
+
+- intent: course_leader
+  examples: |
+    - UCIA who is the course leader?
+    - Can you provide me the details of the course leader please?
+    - UCIA send me the course leaders number please
+
+- intent: head_of_department
+  examples: |
+    - UCIA who is the head of department?
+    - Can you provide me the details of the head of department please?
+    - UCIA send me the head of departments number please
+
+- intent: dean
+  examples: |
+    - UCIA who is the dean?
+    - Can you provide me the details of the dean please?
+    - UCIA send me the deans number please
+
+- intent: module
+  examples: |
+    - UCIA what are the modules which are provided by the course?
+    - Tell me the modules provided by the course
+    - What are the modules provided by the course?
+
+- intent: moduleN
+  examples: |
+    - UCIA what are the modules which are not provided by the course?
+    - Tell me the modules not provided by the course
+    - What are the modules not provided by the course?
+
+- intent: administrative_office
+  examples: |
+    - UCIA tell me about the administrative_office
+    - What about the administrative_office
+    - Can you tell me the administrative_office?
+    - Please tell me about the administrative_office?
+
+- intent: finalYearProject
+  examples: |
+    - UCIA tell me about the final Year Project
+    - Send me details regarding the final Year Project
+    - Tell me about the final Year Project
+
+- intent: transfer
+  examples: |
+    - UCIA can i transfer to another university?
+    - How to transfer from IIT to another university?
+    - UCIA how to transfer to another university?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
