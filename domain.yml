@@ -55,6 +55,169 @@ responses:
   utter_contact_slots:
   - text: ""
 
+  utter_abusive:
+  - text: ""
+
+  utter_joke:
+  - text: ""
+
+  utter_tell_developer:
+  - text: ""
+
+  utter_outOfScope:
+  - text: ""
+
+  utter_listen_query:
+  - text: ""
+
+  utter_submitt:
+  - text: ""
+
+  utter_degree_slots:
+  - text: ""
+
+  utter_welcome:
+  - text: ""
+
+  utter_levels_of_study:
+  - text: ""
+
+  utter_ask_continue:
+  - text: ""
+
+  utter_available_courses:
+  - text: ""
+
+  utter_about_university:
+  - text: ""
+
+  utter_provide_admission_info:
+  - text: ""
+
+  utter_provide_GPA_info:
+  - text: ""
+
+  utter_provide_course:
+  - text: ""
+
+  utter_provide_apply_info:
+  - text: ""
+
+  utter_provide_hostel_info:
+  - text: ""
+
+  utter_evening_slots:
+  - text: ""
+
+  utter_fulltime:
+  - text: ""
+
+  utter_part_time:
+  - text: ""
+
+  utter_degree_duration:
+  - text: ""
+
+  utter_medals_certificates:
+  - text: ""
+
+  utter_library:
+  - text: ""
+
+  utter_cafeteria:
+  - text: ""
+
+  utter_auditorium:
+  - text: ""
+
+  utter_registrar_slots:
+  - text: ""
+
+  utter_moduleLeader_slots:
+  - text: ""
+
+  utter_levelCoordinator_slots:
+  - text: ""
+
+  utter_course_leader_slots:
+  - text: ""
+
+  utter_head_of_department_slots:
+  - text: ""
+
+  utter_dean_slots:
+  - text: ""
+
+  utter_administrative_office:
+  - text: ""
+
+  utter_finalYearProject:
+  - text: ""
+
+  utter_transfer: 
+  - text: ""
+
+  utter_classes:
+  - text: ""
+
+  utter_graduation:
+  - text: ""
+
+  utter_readmission:
+  - text: ""
+
+  utter_semester_week:
+  - text: ""
+
+  utter_rechecking_paper:
+  - text: ""
+
+  utter_provide_fees:
+  - text: ""
+
+  utter_provide_opening_hours:
+  - text: ""
+
+  utter_provide_registration_details:
+  - text: ""
+
+  utter_provide_requirements:
+  - text: ""
+
+  utter_placement_info:
+  - text: ""
+
+  utter_provide_abroad_info:
+  - text: ""
+
+  utter_provide_scholarship_info:
+  - text: ""
+
+  utter_provide_referral:
+  - text: ""
+
+  utter_provide_deferral:
+  - text: ""
+
+  utter_provide_retake:
+  - text: ""
+
+  utter_fail:
+  - text: ""
+
+  utter_making:
+  - text: ""
+
+  utter_provide_credit_for_award:
+  - text: ""
+
+  utter_provide_degree_scheme:
+  - text: ""
+
+  utter_provide_award_classification:
+  - text: ""
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
