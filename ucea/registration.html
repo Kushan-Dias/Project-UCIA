@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> <!--icons out link-->
 </head>
 <body>
     <div class="container">
         <div class="forms">
+            
+
+            <!--registraion form-->
             <div class="form login">
-                <span class="title">Login</span>
+                <span class="title">Registration</span>
                 <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" name="" id="" required>
+                        <i class="uil uil-user"></i>
+                    </div>
                     <div class="input-field">
                         <input type="text" placeholder="Enter your email" name="" id="" required>
                         <i class="uil uil-envelope icon"></i>
@@ -21,28 +28,22 @@
                     <div class="input-field">
                         <input type="password" class="password" placeholder="Enter your password" name="" id="" required>
                         <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
+                        
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Re-Enter your password" name="" id="" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil 6 showHidePw"></i>
                     </div>
                 
-                    <div class="checkbox-text">
-                        <div class="checkbox-content">
-                            <input type="checkbox" name="" id="logcheck">
-                            <label for="logcheck" class="text">Remember me</label>
-                        </div>
-
-                        <a href="#" class="text">Forgot password?</a>
-                    </div>
+                    
 
                     <div class="input-field button">
-                        <a href="main.html"><input type="button" value="Login Now"></a>
+                        <input type="button" value="Login Now">
                     </div>
                 </form>
-
-                <div class="login-signup">
-                    <span class="text">Not a member?
-                        <a href="registration.html" class="text signup-link ">Signup Now</a>
-                    </span>
-                </div>
+                
+                
             </div>
         </div>
     </div>

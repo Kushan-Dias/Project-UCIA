@@ -12,13 +12,13 @@ pwShowHide.forEach(eyeIcon =>{
                 pwField.type = "text"
 
                 pwShowHide.forEach(icon =>{
-                    icon.classList.replace("uil-eye-slash","uil-eye")
+                    icon.classList.replace("uil-eye-slash","uil-eye");
                 })
             }else{
                 pwField.type = "password";
 
                 pwShowHide.forEach(icon =>{
-                    icon.classList.replace("uil-eye","uil-eye-slash")
+                    icon.classList.replace("uil-eye","uil-eye-slash");
                 })
             }
         })
