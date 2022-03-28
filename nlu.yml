@@ -1,0 +1,536 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - See ya later UCIA
+    - Goodbye UCIA
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - On point
+    - Accurate
+    - yep
+    - yeah
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Hell no
+    - nope
+    - np
+    - not a chance
+    - never in a million years
+    - naw
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: abusive
+  examples: |
+    - Why are you so annoying?
+    - You re just a robot
+    - am I talking to a an idiot?
+    - You will never be a human
+
+- intent: joke
+  examples: |
+    - Ucia, tell me a joke please
+    - Can you tell me a joke?
+    - can you make me laugh?
+    - I need some laughter
+    - Can you do comedy?
+    - Can you joke?
+    - joke?
+    - make me laugh
+    - Hey make me a joke
+    - I want to laugh UCIA
+
+- intent: ask_developer
+  examples: |
+    - who designed you?
+    - Who made you?
+    - who are the developers that made you?
+    - what are the names of the developers?
+    - who are your parents?
+
+- intent: feeling
+  examples: |
+    - How are you feeling today UCIA?
+    - What about you?
+    - How are you feeling?
+    - Are you feeling great today?
+
+- intent: ask_datetime
+  examples: |
+    - What is the date today UCIA?
+    - Can you tell me what todays date is?
+    - Date and time please?
+    - Tell me the date and time please
+    - Please provide me with the date and time today
+    - UCIA, tell me the date please
+
+
+- intent: available_programs
+  examples: |
+    - Can you tell me about the available programs?
+    - Can you tell me about the present programs?
+    - Please tell me about the programs?
+    - UCIA tell me the available programs?
+    - What are the available programs ?
+    - Are there available programs? 
+
+- intent: levels_of_study
+  examples: |
+    - What are the levels of study UCIA
+    - Can you please tell me the levels of study?
+    - UCIA Tell me the levels of study please?
+
+- intent: course
+  examples: |
+    - What are the available courses?
+    - What are the courses?
+    - Can you tell me the courses available please?
+    - What are the courses available?
+    - Send me a list of the courses available
+    - Can you please show me the list of available courses?
+
+- intent: about_university
+  examples: |
+    - UCIA tell me about the university
+    - Can you tell me about the university please?
+    - Can you tell me more about IIT?
+    - Tell me more about the university
+    - Tell me some details about IIT
+
+- intent: admission
+  examples: |
+    - How does the admission process take place?
+    - What can you tell me about admission?
+    - What are the steps for admission?
+    - What is the way to get admission?
+    - What is the way i can get admission?
+    
+- intent: GPA
+  examples: |
+    - UCIA what is the GPA?
+    - What is he GPA?
+    - What is GPA?
+
+- intent: apply
+  examples: |
+    - How can i apply for the program?
+    - UCIA tell me how to apply for the program?
+    - Tell me how to apply for the program
+
+- intent: contact
+  examples: |
+    - Hey UCIA can you please send me contact details please?
+    - Can you i have the contact details of IIT?
+    - I want to contact IIT
+    - Can i have the contact number of IIT?
+    - Send me the contac details of IIT
+    - What is the number of IIT?
+    - What is the phone number of IIT?
+
+- intent: tell_date
+  examples: |
+    - How can i apply for the program?
+
+- intent: tell_time
+  examples: |
+    - Hey UCIA can you tell me the time please?
+    - Can you tell me the time?
+    - Can you provide me the time please?
+    - What is the time?
+    - Can you tell me the present time?
+    - Time please?
+    - Tell me the time?
+
+- intent: help
+  examples: |
+    - Can you please help me?
+    - UCIA can you help me?
+    - Please help me
+    - I need help please
+    - All i need is help
+    - Help me
+    - Help me please
+
+- intent: thankyou
+  examples: |
+    - Thank you!
+    - Thank you so much!
+    - Thank you UCIA
+    - Thank you , it was helpful
+    - Alright thanks
+    - Thanks
+    - Thanx
+
+- intent: stop
+  examples: |
+    - I see
+    - Oh i see
+    - Oh well i understand
+    - This is alright thank you
+    - Is that all?
+    - Perfect
+    - Amazing
+    - Just what i have been looking for
+    - This is all i want
+    - This is all i ever wanted
+
+- intent: admission
+  examples: |
+    - How can i gain admission?
+    - How to get admission?
+    - Can you tell me how to get admission?
+    - Tell me how to get admission?
+    - How can i get admission UCIA?
+    - Can you tell me the steps to get admission?
+
+- intent: hostel
+  examples: |
+    - Tell me about the hostel of IIT please
+    - UCIA tell me about the hostels
+    - UCIA what about hostels?
+
+- intent: hostel
+  examples: |
+    - Tell me about the hostel of IIT please
+    - UCIA tell me about the hostels
+    - UCIA what about hostels?
+
+- intent: evening_classes
+  examples: |
+    - Tell me about the evening classes
+    - UCIA what about evening classes?
+    - Hey UCIA tell me about evening classes
+
+- intent: fulltime
+  examples: |
+    - Tell me about the full time students
+    - UCIA tell me about full time courses
+
+- intent: part_time
+  examples: |
+    - Tell me about the part time students
+    - UCIA tell me about part time courses
+
+- intent: degree_duration
+  examples: |
+    - What about the degree duration?
+    - Hey UCIA tell me how long is the degree?
+    - Tell me how long the degree is
+    - Hey UCIA what is the degree duration?
+
+- intent: medals_certificates
+  examples: |
+    - Tell me about the medals and certificates please
+    - Hey UCIA tell me about the medals and certificates
+    - Tell me about the medals
+    - Tell me about the certificates
+    - UCIA what about medals and certificates
+
+- intent: events
+  examples: |
+    - Tell me about the events happening in IIT
+    - Hey UCIA tell me about the events at IIT
+    - What are the events in IIT
+    - Can you tell me about the vents in IIT
+
+  - intent: tell_academic
+  examples: |
+    - Tell me about the academic events happening at IIT
+    - What are the academic events happenig at IIT
+    - Can you tell me about the academic events happening at IIT?
+    - UCIA tell me about the academic events happening at IIT
+
+- intent: tell_other
+  examples: |
+    - Tell me about the events other than academic and social
+    - Hey UCIA what are the other event parts?
+    - Tell me about the other event parts
+
+- intent: library
+  examples: |
+    - Tell me about the library facilities at IIT
+    - UCIA tell me about the library facilites please
+    - Are there library facilities at IIT
+    - Please tell me about the library facilities 
+
+- intent: cafeteria
+  examples: |
+    - UCIA hows the food at IIT?
+    - Is the food in the cafeteria good?
+    - Tell me about the cafeteria in IIT
+    - Is there good cafeteria services in IIT?
+
+- intent: auditorium
+  examples: |
+    - UCIA hows the auditorium in IIT?
+    - Can you tell me about the auditorium in IIT?
+    - UCIA Tell me about the auditorium in IIT
+
+- intent: registrar
+  examples: |
+    - UCIA can you tell me about the registrar in IIT?
+    - Provide me the details of the registrar please
+    - UCIA Provide me the details of the registrar please
+
+- intent: moduleLeader
+  examples: |
+    - UCIA who is the module leader?
+    - Can you provide me the details of the moduel leader please?
+    - UCIA send me the module leaders number please
+
+- intent: levelCoordinator
+  examples: |
+    - UCIA who is the level coordinator?
+    - Can you provide me the details of the level coordinator please?
+    - UCIA send me the level coordinators number please
+
+- intent: course_leader
+  examples: |
+    - UCIA who is the course leader?
+    - Can you provide me the details of the course leader please?
+    - UCIA send me the course leaders number please
+
+- intent: head_of_department
+  examples: |
+    - UCIA who is the head of department?
+    - Can you provide me the details of the head of department please?
+    - UCIA send me the head of departments number please
+
+- intent: dean
+  examples: |
+    - UCIA who is the dean?
+    - Can you provide me the details of the dean please?
+    - UCIA send me the deans number please
+
+- intent: module
+  examples: |
+    - UCIA what are the modules which are provided by the course?
+    - Tell me the modules provided by the course
+    - What are the modules provided by the course?
+
+- intent: moduleN
+  examples: |
+    - UCIA what are the modules which are not provided by the course?
+    - Tell me the modules not provided by the course
+    - What are the modules not provided by the course?
+
+- intent: administrative_office
+  examples: |
+    - UCIA tell me about the administrative_office
+    - What about the administrative_office
+    - Can you tell me the administrative_office?
+    - Please tell me about the administrative_office?
+
+- intent: finalYearProject
+  examples: |
+    - UCIA tell me about the final Year Project
+    - Send me details regarding the final Year Project
+    - Tell me about the final Year Project
+
+- intent: transfer
+  examples: |
+    - UCIA can i transfer to another university?
+    - How to transfer from IIT to another university?
+    - UCIA how to transfer to another university?
+
+- intent: classes
+  examples: |
+    - UCIA can i know about the classes?
+    - Tell me about the classes ?
+    - What are the classes available?
+    - Can you tell me about the classes?
+
+- intent: graduation
+  examples: |
+    - UCIA can you tell me about graduation?
+    - Tell me about graduation
+    - UCIA what about graduation
+
+- intent: readmission
+  examples: |
+    - UCIA can you tell me about readmission?
+    - How to get into readmission?
+    - Tell me about readmission
+
+- intent: semester_week
+  examples: |
+    - UCIA can you tell me about the semester please?
+    - Tell me about the semester
+    - Can i know about the semester?
+
+- intent: rechecking_paper
+  examples: |
+    - UCIA can you tell me about rechecking papers please?
+    - How to recheck papers?
+    - I want to recheck my Paper
+
+- intent: fees
+  examples: |
+    - UCIA can you tell me about the fees for courses which are not provided?
+
+- intent: feesP
+  examples: |
+    - UCIA can you tell me about the fees for courses which are not provided?
+
+- intent: openingHours
+  examples: |
+    - UCIA what time does IIT open?
+    - What is the opening our of IIT?
+    - Can you tell me what time IIT opens
+
+- intent: registration
+  examples: |
+    - UCIA can i transfer to another university?
+    - How to transfer from IIT to another university?
+    - UCIA how to transfer to another university?
+
+- intent: requirements
+  examples: |
+    - UCIA tell me what i need to enter the program
+    - What requirements do i need to enter IIT
+
+- intent: placement
+  examples: |
+    - UCIA tell me about the placement year
+    - can you tell me about the placement year?
+    - Tell me about the placement please?
+
+- intent: abroad
+  examples: |
+    - UCIA can i study abroad?
+    - Tell me how to study abroad please
+    - Is there a way to study abroad?
+
+- intent: scholarship
+  examples: |
+    - UCIA tell me about scholarships please
+    - How do i get a scholarship
+    - Tell me how i get a scholarship please
+
+- intent: referral
+  examples: |
+    - UCIA can i know about refer?
+    - Tell me about refer please
+
+- intent: deferral
+  examples: |
+    - UCIA can i know about defer?
+    - Tell me about defer please
+
+
+- intent: retake
+  examples: |
+    - UCIA can i know about the retake?
+    - What is retake?
+    - UCIA why do we need to retake and exam?
+
+- intent: fail
+  examples: |
+    - UCIA what can i do if i fail a module?
+    - What can you tell me about failing a module?
+    - What to do when you fail a module?
+
+- intent: marking
+  examples: |
+    - UCIA can you tell me about the marking scheme?
+    - Tell me about the marking scheme?
+    - What can you tell me about the marking scheme?
+    - Tell me how you mark please
+
+- intent: credit_for_award
+  examples: |
+    - UCIA can i know about the requirements for a credit award?
+    - Tell me about the requirements for the credit award?
+
+- intent: degree_scheme
+  examples: |
+    - UCIA can you tell me about the honors?
+    - What is honors?
+    - Tell me about honors please
+
+- intent: award_classification
+  examples: |
+    - UCIA can you tell me about the award classificaton?
+    - Tell me about the awards please
