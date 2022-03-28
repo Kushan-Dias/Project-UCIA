@@ -18,13 +18,13 @@ body{
 .container{
     width: 400px;
     min-height: 400px;
-    background: rgba(255, 255, 255, 0.712);
+    background: rgba(252, 252, 252, 0.541);
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     padding: 40px 30px;
 }
 .container .login-text{
-    color: black;
+    color: rgb(252, 250, 250);
     font-weight: 500;
     font-size: 1.1rem;
     text-align: center;
@@ -40,7 +40,7 @@ body{
 .container .login-email .input-group input{
     width: 100%;
     height: 100%;
-    border: 2px solid #e7e7e7;
+    border: 2px solid rgb(212, 209, 209);
     padding: 15px 20px;
     font-size: 1rem;
     border-radius: 10px;
@@ -49,7 +49,7 @@ body{
     transition: .3s;
 }
 .container .login-email .input-group input:focus{
-    border-color: #a29bfe;;
+    border-color: red;;
 }
 .container .login-email .input-group .btn{
     display: block;
@@ -57,7 +57,7 @@ body{
     padding: 15px 20px;
     text-align: center;
     border: none;
-    background: #a29bfe;
+    background: rgb(155, 8, 8);
     outline: none;
     border-radius: 30px;
     font-size: 1.2rem;
@@ -67,15 +67,15 @@ body{
 }
 .container .login-email .input-group .btn:hover{
     transform: translateY(-4px);
-    background: #6c5ce7;
+    background: red;
 }
 .login-register-text{
-    color: #111;
+    color: rgb(255, 255, 255);
     font-weight: 600;
 }
 .login-register-text a{
     text-decoration: none;
-    color: #6c5ce7;
+    color: rgb(155, 8, 8);
     /* font-weight: 600; */
 }
 

@@ -38,17 +38,17 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <form action="" method="POST" class="login-email">
-            <p class="login-text" style="font-size:2rem; font-weight:800">Login</p>
+            <p class="login-text" sstyle="font-size:2rem; font-weight:800">Login</p>
             <div class="input-group">
                 <input type="email" name="email" id="" placeholder="Email" required>
             </div>
             <div class="input-group">
-                <input type="password" name="password" id="" placeholder="password" required>
+                <input type="password" name="password" id="" placeholder="Password" required>
             </div>
             <div class="input-group">
                 <button name="submit" class="btn">Login</button>
             </div>
-            <p class="login-register-text">Don't have an account <a href="register.php">Register Here</a></p>
+            <p class="login-register-text">&nbsp&nbsp&nbsp&nbsp Don't have an account? <a href="register.php">Register Here</a></p>
         </form>
     </div>
 </body>

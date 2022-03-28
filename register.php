@@ -50,15 +50,15 @@
                 <input type="email" name="email" id="" placeholder="Email"  required>
             </div>
             <div class="input-group">
-                <input type="password" name="password" id="" placeholder="password"  required>
+                <input type="password" name="password" id="" placeholder="Password"  required>
             </div>
             <div class="input-group">
-                <input type="password" name="cpassword" id="" placeholder="confirm password"  required>
+                <input type="password" name="cpassword" id="" placeholder="Confirm Password"  required>
             </div>
             <div class="input-group">
                 <button name="submit" class="btn">Register</button>
             </div>
-            <p class="login-register-text">Have an account <a href="login.php">Login Here</a></p>
+            <p class="login-register-text"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHave an account? <a href="login.php">Login Here</a></p>
         </form>
     </div>
 </body>
