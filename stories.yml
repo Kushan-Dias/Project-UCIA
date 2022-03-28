@@ -38,11 +38,11 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: Asking about contact details 1
+- story: collect contact info 1
   steps:
   - intent: greet 
   - action: utter_greet
-  - intent: contact
+  - intent: inform
   - action: contact_detail_form
   - active_loop: contact_detail_form
   - slot_was_set:
@@ -56,7 +56,34 @@ stories:
   - active_loop: null
   - action: utter_submit
   - action: utter_contact_slots
+  - intent: goodbye
+  - action: utter_goodbye
 
+
+- story: Asking about contact details 2
+  steps:
+  - intent: greet 
+  - action: utter_greet
+  - intent: inform
+  - action: contact_detail_form
+  - active_loop: contact_detail_form
+  - slot_was_set:
+    - requested_slot: contact_detail
+  - slot_was_set:
+    - contact_detail: telep
+  - slot_was_set:
+    - contact_detail: null
+  - slot_was_set:
+    - requested_slot: contact_detail
+  - slot_was_set:
+    - contact_detail: telephone number
+  - slot_was_set:
+    - contact_detail: telephone number
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_contact_slots
 
 - story: abusive path
   steps:
@@ -93,31 +120,51 @@ stories:
 #  - action: utter_general_question
 
 
+
 - story: ask date or time 
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: ask_datetime
-  - action: action_date_time  #put buttons for date and time
+  - intent: inform2
+  - action: date_time_form
+  - active_loop: date_time_form
+  - slot_was_set:
+    - requested_slot: date_time
+  - slot_was_set:
+    - date_time: date
+  - slot_was_set:
+    - date_time: date
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
 
-- story: date path
+
+
+- story: Asking date or time2
   steps:
-  - intent: tell_date
-    entities:
-      - date_time: "date"
+  - intent: greet 
+  - action: utter_greet
+  - intent: inform2
+  - action: date_time_form
+  - active_loop: date_time_form
   - slot_was_set:
-      - date_time: "date"
-  - action: action_showtime
-  
-  
-- story: time path
-  steps:
-  - intent: tell_time
-    entities:
-      - date_time: "time"
+    - requested_slot: date_time
   - slot_was_set:
-      - date_time: "time"
-  - action: action_showtime
+    - date_time: dat
+  - slot_was_set:
+    - date_time: null
+  - slot_was_set:
+    - requested_slot: date_time
+  - slot_was_set:
+    - date_time: date
+  - slot_was_set:
+    - date_time: date
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+
 
 
 - story: asking out of scope 
@@ -132,6 +179,7 @@ stories:
   steps:
   - intent: help
   - action: utter_listen_query
+
 
 - story: collect university degree program info
   steps:
@@ -149,18 +197,6 @@ stories:
   - slot_was_set:
     - requested_slot: course_name
   - slot_was_set:
-    - course_name: computerr science
-  - slot_was_set:
-    - course_name: null
-  - slot_was_set:
-    - requested_slot: course_name
-  - slot_was_set:
-    - course_name: comput science
-  - slot_was_set:
-    - course_name: null
-  - slot_was_set:
-    - requested_slot: course_name
-  - slot_was_set:
     - course_name: computer science
   - slot_was_set:
     - course_name: computer science
@@ -169,38 +205,30 @@ stories:
   - active_loop: null
   - action: utter_submit
   - action: utter_degree_slots
-  - intent: thankyou
-  - action: utter_welcome
 
 
-- story: collect university degree program info (user interrupts - 1) #new 
+- story: interactive_story_5
   steps:
-  - intent: greet 
+  - intent: greet
   - action: utter_greet
   - intent: available_programs
-  - action: utter_levels_of_study
+  - action: simple_degree_program_form
+  - active_loop: simple_degree_program_form
+  - slot_was_set:
+    - requested_slot: level_of_study
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: simple_degree_program_form
+  - slot_was_set:
+    - requested_slot: level_of_study
   - intent: stop
   - action: utter_ask_continue
-  - or: 
-    - intent: stop
-    - intent: affirm
+  - intent: affirm
   - action: utter_goodbye
-
-
-- story: collect university degree program info (user interrupts - 2) #new 
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: available_programs
-  - action: utter_levels_of_study
-  - intent: levels_of_study
-  - action: utter_available_courses
-  - intent: stop
-  - action: utter_ask_continue
-  - or: 
-    - intent: stop
-    - intent: affirm
-  - action: utter_goodbye
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
   
 
 - story: Ask About University
@@ -233,14 +261,24 @@ stories:
 #  - intent: NTS
 #  - action: utter_provide_NAT_info
 
-
 - story: Ask About applying for courses
   steps:
   - intent: greet 
   - action: utter_greet
   - intent: apply
-  - action: utter_provide_course
-  - action: utter_provide_apply_info
+  - action: apply_details_form
+  - active_loop: apply_details_form
+  - slot_was_set:
+    - requested_slot: level_type
+  - slot_was_set:
+    - level_type: undergraduate
+  - slot_was_set:
+    - level_type: undergraduate
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+
 
 - story: Ask About hostel 
   steps:
@@ -249,33 +287,6 @@ stories:
   - intent: hostel
   - action: utter_provide_hostel_info 
   
-  
-- story: evening_classes
-  steps:
-  - intent: greet 
-  - action: utter_greet
-  - intent: evening_classes
-  - action: evening_class_form
-  - active_loop: evening_class_form
-  - slot_was_set:
-    - requested_slot: level
-  - slot_was_set:
-    - level: l5
-  - slot_was_set:
-    - requested_slot: course_name
-  - slot_was_set:
-    - course_name: computer science
-  - slot_was_set:
-    - requested_slot: group
-  - slot_was_set:
-    - group: A
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - action: utter_evening_slots
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: full time
   steps:
@@ -313,7 +324,6 @@ stories:
   - action: utter_greet
   - intent: medals_certificates
   - action: utter_medals_certificates
-
 - story: Asking about events
   steps:
   - intent: greet 
@@ -321,23 +331,23 @@ stories:
   - intent: events
   - action: action_events #put buttons
 
-- story: academic events path
+- story: cutting edge event path
   steps:
-  - intent: tell_academic
+  - intent: cutting
     entities:
-      - event_type: "Academic"
+      - content_type: "cutting"
   - slot_was_set:
-      - event_type: "Academic"
-  - action: action_eventInfo
+      - content_type: "cutting"
+  - action: utter_cutting
 
-- story: other events path
+- story: stagecraft path
   steps:
-  - intent: tell_other
+  - intent: stagecraft
     entities:
-      - event_type: "other"
+      - content_type: "stage craft"
   - slot_was_set:
-      - event_type: "other"
-  - action: action_eventInfo
+      - content_type: "stage craft"
+  - action: utter_stagecraft
 
 #- story: Asking about address
 #  steps:
