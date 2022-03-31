@@ -1,11 +1,17 @@
 
 from typing import Any, Text, Dict, List
 
+from datetime import datetime
+
+
+
 from rasa_sdk import Tracker, FormValidationAction, Action
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import EventType
 from rasa_sdk.types import DomainDict
+from rasa_sdk.events import SlotSet
+
 
 ALLOWED_level_of_study = [
     "foundation",
@@ -25,6 +31,13 @@ LEVEL_TYPES = ["foundation courses", "undergraduate courses", "postgraduate cour
 UNDERGRADUATE_COURSES = ["computer science", "software engineering", "artificial intelligence","business information systems", "business management", "business data analytics"]
 POSTGRADUATE_COURSES = ["advanced software engineering", "cyber security and forensics","big data analytics", "information technology"]
 ALLOWED_course_name = ["computer science", "software engineering", "artificial intelligence", "cyber security", "Information technology", "big data analytics", "cs", "se", "ai", "it"]
+
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+
+date = datetime.date(datetime.now())
+
 
 
 ALLOWED_contact_detail = [
@@ -108,18 +121,23 @@ class ValidateDateTimeForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `date_time` value."""
 
+       
+
+
         if slot_value.lower() not in ALLOWED_date_time:
             dispatcher.utter_message(text=f"Sorry it was not clear.. Please spell the words correctly")
             return {"date_time": None}
         dispatcher.utter_message(text=f"OK! You want to know about {slot_value} .")
 
         if slot_value.lower() == "time":
-            dispatcher.utter_message(text=f"Time is")
+            dispatcher.utter_message(text=f"It's {current_time}")
        
         else:
-            dispatcher.utter_message(text=f"date is")
+            dispatcher.utter_message(text=f"Today is {date}")
         
         return {"date_time": slot_value}
+
+
 
 class AskForLevelOfStudyAction(Action):
     
@@ -130,7 +148,7 @@ class AskForLevelOfStudyAction(Action):
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
         dispatcher.utter_message(
-                text=f"What kind of pizza do you want?",
+                text=f"Please provide the Level of Study: ",
                 buttons=[{"title": p, "payload": p} for p in LEVEL_OF_STUDIES],
             )
            
@@ -248,18 +266,18 @@ class ValidateApplyDetailsForm(FormValidationAction):
         """Validate `level_type` value."""
         if slot_value.lower() == "foundation courses":
             dispatcher.utter_message(
-                text="oh foundation"
+                text="foundation applying details"
             )
      
         elif slot_value.lower() == "undergraduate courses":
              dispatcher.utter_message(
-                text="I'll remember you prefer foundation."
+                text="undergraduate applying details"
             )
            
        
         elif slot_value.lower() == "postgraduate courses":
             dispatcher.utter_message(
-                text="I'll remember you prefer foundation."
+                text="postgraduate applying details"
             )
         return {"level_type": slot_value}
 
